@@ -147,7 +147,8 @@ The player recursively scans /music to four directory levels. See
 | LCD | CS T20, D/C R18, reset N17, SCLK R19, MOSI P20 |
 | Buttons | T19 previous, P19 play/pause, U20 next, U19 volume down, V20 volume up |
 
-The intended first-build filter is one network per channel:
+The output filter is one network per channel. The diagram shows the conservative
+`100 nF` baseline:
 
 ~~~text
 FPGA output -- 220 ohm --+-- 10 uF series capacitor -- line input
@@ -157,12 +158,19 @@ FPGA output -- 220 ohm --+-- 10 uF series capacitor -- line input
                          GND
 ~~~
 
-The nominal corner is 7.23 kHz. Connect the filtered output only to an active
-speaker or a line input rated at least 10 kohm; this is not a headphone or
-passive-speaker driver. Power off before fitting the filter, verify H4
-continuity, and confirm the selected contacts are not tied to 3.3 V or 5 V.
-After settling, measure less than 50 mV DC after the 10 uF capacitor. Use a
-high-impedance oscilloscope for overshoot and channel-isolation checks.
+With 220 ohm, `100 nF` gives a nominal 7.23 kHz corner and the strongest RF
+rejection, but it sounds dark. `47 nF` gives approximately 15.39 kHz and is the
+recommended first music-oriented replacement. `33 nF` is a brighter
+experimental choice only after oscilloscope checks. Do not use `10 nF` as the
+default single-pole filter because it passes substantially more sigma-delta RF
+energy. See the full [capacitor table and bench gates](docs/hardware.md).
+
+Connect the filtered output only to an active speaker or a line input rated at
+least 10 kohm; this is not a headphone or passive-speaker driver. Power off
+before changing the capacitor, verify H4 continuity, and confirm the selected
+contacts are not tied to 3.3 V or 5 V. After settling, measure less than 50 mV
+DC after the 10 uF capacitor. Use a high-impedance oscilloscope for overshoot
+and channel-isolation checks.
 
 The ST7789 route constraints cover FPGA package routes only. Panel setup/hold,
 cable delay, ringing, voltage margin, and the audio connector still require

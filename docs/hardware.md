@@ -33,9 +33,34 @@ not a headphone or passive-speaker driver. Observe electrolytic polarity: the
 filter side sits near mid-rail under normal sigma-delta audio and is the
 positive side unless measurements establish otherwise.
 
-The nominal low-pass corner is `1/(2*pi*220*100 nF) = 7.23 kHz`. A later
-47 nF capacitor would move it to approximately 15.4 kHz, but this first build
-keeps 100 nF so hardware and simulation describe the same circuit.
+Choose the shunt capacitor according to the required audio-bandwidth versus
+out-of-band sigma-delta rejection. These are analytical single-pole estimates
+using `fc = 1/(2*pi*220*C)`; they are not a substitute for bench measurements.
+
+| Shunt capacitor | Nominal corner | Attenuation at 20 kHz | Approx. attenuation at 100 MHz | Recommendation |
+| ---: | ---: | ---: | ---: | --- |
+| 100 nF | 7.23 kHz | -9.37 dB | -82.81 dB | Conservative baseline; strongest RF rejection, darkest sound |
+| 68 nF | 10.64 kHz | -6.56 dB | -79.46 dB | Conservative brighter compromise |
+| 47 nF | 15.39 kHz | -4.29 dB | -76.25 dB | Recommended first music-oriented replacement |
+| 33 nF | 21.92 kHz | -2.63 dB | -73.18 dB | Brighter experimental choice after scope checks |
+| 22 nF | 32.88 kHz | -1.37 dB | -69.66 dB | Use only when the destination adds RF filtering |
+| 10 nF | 72.34 kHz | -0.32 dB | -62.81 dB | Not recommended as the only reconstruction pole |
+
+With a 10 kohm line input, the effective resistance is approximately
+`220 || 10000 = 215.26 ohm`, so the listed corners move about 2.2 percent
+higher. The 10 uF coupling capacitor forms a separate high-pass pole of about
+1.59 Hz with a 10 kohm input; it does not set the treble cutoff.
+
+Use the same value in both channels. Prefer a stable dielectric such as C0G,
+film, or X7R; avoid Y5V/Z5U parts whose capacitance changes strongly with bias
+and temperature. Keep the shunt capacitor and its ground return close to the
+220 ohm resistor. Power off before changing components.
+
+The `47 nF` option is the recommended first listening comparison, not a
+bench-accepted production value. For every candidate, check FPGA-pin overshoot,
+post-coupling DC, left/right isolation, and audible RF demodulation or hiss with
+the intended amplifier or interface. Retain `100 nF` if the brighter values
+increase noise or instability.
 
 ## LCD
 
