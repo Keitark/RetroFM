@@ -12,10 +12,12 @@
 .agents/
 .claude/
 .codex/
+.pcba-workflow/
 .vscode/
 **/.agents/
 **/.claude/
 **/.codex/
+**/.pcba-workflow/
 **/.vscode/
 
 # Python and compiler by-products
