@@ -88,22 +88,33 @@ test.ps1 は host core tests と公開版 target-support tests を構成して�
 追加されます。verify.ps1 は Xilinx RTL suite を追加し、RouteVendor
 は低速な vendor-core gate、ImplementFullDesign は PS/PL 全体のビルドを実行します。
 
-固定した依存関係を取得して FPGA 候補をビルドします。
+公開版で条件を確認済みの依存関係だけを取得し、検証と FPGA build を実行する
+手順は次のとおりです。
 
 ~~~powershell
 .\fetch_dependencies.ps1
+.\test.ps1
 .\build.ps1
 ~~~
 
 対象は xc7z010clg400-1、PS FCLK は 100 MHz です。adapter の standalone N18
-clock は使用しません。routed XSA から standalone firmware と SD ディレクトリを
-生成するには次を実行します。
+clock は使用しません。Vivado/Vitis、XSCT、Bootgen 2024.2 は外部の AMD/Xilinx
+tool であり、この repository には含みません。
+
+現在の MDX target は optional prototype dependency である
+portable_mdx/MXDRV/X68Sound を必要とします。個人評価用の standalone firmware と
+SD ディレクトリを生成する場合は、この境界を明示的に承認して次を実行します。
 
 ~~~powershell
-.\packaging\build_firmware.ps1
+.\fetch_dependencies.ps1 -IncludePrototypeMdx
+.\build.ps1
+.\packaging\build_firmware.ps1 -IncludePrototypeMdx
 ~~~
 
-ビルド成果物は、この公開スナップショットには意図的にコミットしていません。
+最後の command は `build/vitis/sd/BOOT.BIN` と SD directory を生成します。
+portable_mdx の条件が解決するまでは、その binary は private かつ再配布不可です。
+build output と proprietary Xilinx tools は、この公開スナップショットには
+意図的にコミットしていません。
 
 ## SD カードの手順
 
