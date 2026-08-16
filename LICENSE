@@ -1,0 +1,14 @@
+                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+
+The combined RetroFM source is distributed under GPL-3.0-only. The complete canonical
+license text is available at <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+NOTE: This short file is not a substitute for the canonical license in a
+release archive. `packaging/package.ps1` refuses a release until the full
+canonical text has been installed as `COPYING` and all dependency commits in
+`third_party.lock.json` are concrete.
