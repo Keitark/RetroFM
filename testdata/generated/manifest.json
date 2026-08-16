@@ -1,0 +1,30 @@
+{
+  "files": {
+    "retrofm_ym2151_demo.mdx": {
+      "bytes": 115,
+      "sha256": "f20283fffead473b56434ff8aeb7f647324530f2ed3ed51dde4219a69b5b9299"
+    },
+    "retrofm_ym2151_lr_test.mdx": {
+      "bytes": 150,
+      "sha256": "a7afd4c82578b07921484c8920b2483c09c8087ee972bed8d16abd3f86ac771b"
+    },
+    "retrofm_ym2151_pdx_demo.mdx": {
+      "bytes": 159,
+      "sha256": "620deea5c1b3426c43dc46a81482aff6cf3e88257d325ffcf37e6dc7e74fd62d"
+    },
+    "retrofm_ym2151_pdx_demo.pdx": {
+      "bytes": 1024,
+      "sha256": "7e918476f9c0bceeca29c6c65d04956677d97c90df5e62eaab25f9eb8b6362fb"
+    },
+    "retrofm_ym2203_demo.vgm": {
+      "bytes": 705,
+      "sha256": "0b2a1a853123d1954d7adf1f660b8ebea0deea753456b0b115d3b42df7df7bb6"
+    },
+    "retrofm_ym2203_demo.vgz": {
+      "bytes": 326,
+      "sha256": "7fd023398e80630e6fae9ca61c2530bf3056fe71a1786886cedce2d954ff1e2b"
+    }
+  },
+  "license": "CC0-1.0",
+  "schema": 1
+}

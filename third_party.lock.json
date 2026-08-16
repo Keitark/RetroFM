@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "dependencies": {
+    "jt51": {
+      "url": "https://github.com/jotego/jt51.git",
+      "commit": "985a573dcfc1ff135553a39f7eae21d18ba57cbe",
+      "license": "GPL-3.0",
+      "destination": "build/deps/jt51"
+    },
+    "jt12": {
+      "url": "https://github.com/jotego/jt12.git",
+      "commit": "45f4854f9ab43368f5a514857299ab7dfae4e6ab",
+      "license": "GPL-3.0",
+      "destination": "build/deps/jt12"
+    },
+    "jt49": {
+      "url": "https://github.com/jotego/jt49.git",
+      "commit": "7f6abfd08a2af9a92dbd5b32c71ea773248a77e2",
+      "license": "GPL-3.0-or-later",
+      "destination": "build/deps/jt49"
+    },
+    "mdxtools": {
+      "url": "https://github.com/vampirefrog/mdxtools.git",
+      "commit": "606e3a7009aa1a9dfa6bee8bc875dbd5483714e9",
+      "license": "GPL-3.0",
+      "destination": "build/deps/mdxtools"
+    },
+    "miniz": {
+      "url": "https://github.com/richgel999/miniz.git",
+      "commit": "77d0dce8627735138c51770d1799a1ef48f2117d",
+      "license": "MIT",
+      "destination": "build/deps/miniz"
+    },
+    "m5gfx": {
+      "url": "https://github.com/m5stack/M5GFX.git",
+      "commit": "03565ccc96cb0b73c8b157f5ec3fbde439b034ad",
+      "license": "MIT plus IPA Font License Agreement v1.0",
+      "destination": "build/deps/m5gfx"
+    },
+    "tomorrow56": {
+      "url": "https://github.com/tomorrow56/EBAZ4205_tutorial.git",
+      "commit": "ad2f97c881b06ae54d132e37675aac8543c28917",
+      "license": "MIT",
+      "destination": "build/deps/tomorrow56"
+    },
+    "portable_mdx": {
+      "url": "https://github.com/yosshin4004/portable_mdx.git",
+      "commit": "2429db394a2e1a1dad91b173f1affee5d8797aca",
+      "license": "Apache-2.0 portions plus original MXDRVg/MXDRV.X and X68Sound terms; private prototype distribution only pending rights review",
+      "destination": "build/deps/portable_mdx"
+    }
+  }
+}

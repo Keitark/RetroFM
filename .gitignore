@@ -1,0 +1,113 @@
+# RetroFM public source checkout: keep generated products, private inputs, and
+# machine-local state out of commits. Rights-cleared deterministic fixtures
+# under testdata/generated are re-included at the end of this file.
+
+# Build trees and fetched dependencies
+/build/
+/third_party/
+**/build/
+**/third_party/
+
+# Local agent/editor state
+.agents/
+.claude/
+.codex/
+.vscode/
+**/.agents/
+**/.claude/
+**/.codex/
+**/.vscode/
+
+# Python and compiler by-products
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.obj
+*.o
+*.a
+*.pdb
+*.dmp
+
+# Vivado, Vitis, and XSim generated state/products
+.Xil/
+**/.Xil/
+*.Xil/
+xsim.dir/
+**/xsim.dir/
+*.cache/
+**/*.cache/
+*.hw/
+**/*.hw/
+*.ip_user_files/
+**/*.ip_user_files/
+*.runs/
+**/*.runs/
+*.sim/
+**/*.sim/
+*.srcs/
+**/*.srcs/
+*.gen/
+**/*.gen/
+*.xpr
+*.xsa
+*.bit
+*.bin
+*.elf
+*.hdf
+*.pdi
+*.ltx
+*.dcp
+*.mcs
+*.prm
+*.wdb
+*.jou
+*.log
+*.str
+*.rpt
+**/.metadata/
+**/.settings/
+**/.project
+**/.cproject
+**/Debug/
+**/Release/
+
+# Private music, import products, and audio captures
+**/music/
+**/private/
+**/private-music/
+**/import-output/
+**/sd/
+*.vgm
+*.vgz
+*.mdx
+*.pdx
+*.mml
+*.pcm
+*.raw
+*.wav
+*.flac
+*.mp3
+*.zip
+*.7z
+
+# Local credentials and key material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+
+# Rights-cleared deterministic fixtures are the only media exceptions.
+!testdata/
+!testdata/generated/
+!testdata/generated/manifest.json
+!testdata/generated/retrofm_ym2151_demo.mdx
+!testdata/generated/retrofm_ym2151_lr_test.mdx
+!testdata/generated/retrofm_ym2151_pdx_demo.mdx
+!testdata/generated/retrofm_ym2151_pdx_demo.pdx
+!testdata/generated/retrofm_ym2203_demo.vgm
+!testdata/generated/retrofm_ym2203_demo.vgz
