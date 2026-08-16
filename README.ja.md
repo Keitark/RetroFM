@@ -149,7 +149,8 @@ player は /music を最大 4 directory level まで再帰的にスキャンし�
 | LCD | CS T20、D/C R18、reset N17、SCLK R19、MOSI P20 |
 | Buttons | T19 previous、P19 play/pause、U20 next、U19 volume down、V20 volume up |
 
-最初の build で使用する filter は、各 channel につき次の 1 network です。
+出力 filter は各 channel につき次の 1 network です。図は RF 除去を優先した
+`100 nF` の基準構成です。
 
 ~~~text
 FPGA output -- 220 ohm --+-- 10 uF series capacitor -- line input
@@ -159,12 +160,19 @@ FPGA output -- 220 ohm --+-- 10 uF series capacitor -- line input
                          GND
 ~~~
 
-公称 corner は 7.23 kHz です。filter 後の出力は active speaker または 10 kohm
-以上の line input にだけ接続してください。headphone や passive speaker を直接
-駆動する回路ではありません。filter を取り付ける前に電源を切り、H4 の導通を
-確認し、選択した接点が 3.3 V または 5 V に接続されていないことを確認します。
-10 uF 後の DC は安定後 50 mV 未満であることを測定してください。overshoot と
-channel isolation には high-impedance oscilloscope を使用します。
+220 ohm と `100 nF` の公称 corner は 7.23 kHz で、RF 除去は最も強い一方、
+音は暗くなります。`47 nF` は約 15.39 kHz で、音楽再生向けの最初の交換候補
+として推奨します。`33 nF` は oscilloscope で確認した後に試す、より明るい
+実験候補です。`10 nF` は sigma-delta の RF energy を大幅に多く通すため、
+単一 pole filter の標準値には推奨しません。詳細は
+[capacitor table と bench gate](docs/hardware.md) を参照してください。
+
+filter 後の出力は active speaker または 10 kohm 以上の line input にだけ接続
+してください。headphone や passive speaker を直接駆動する回路ではありません。
+capacitor を交換する前に電源を切り、H4 の導通を確認し、選択した接点が 3.3 V
+または 5 V に接続されていないことを確認します。10 uF 後の DC は安定後 50 mV
+未満であることを測定してください。overshoot と channel isolation には
+high-impedance oscilloscope を使用します。
 
 ST7789 の route constraint は FPGA package route だけを対象にします。panel の
 setup/hold、cable delay、ringing、voltage margin、audio connector は bench 測定
