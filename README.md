@@ -88,22 +88,33 @@ prototype dependency is present. verify.ps1 adds the Xilinx RTL suites;
 RouteVendor adds the slower vendor-core gate and ImplementFullDesign runs the
 complete PS/PL build.
 
-Fetch the pinned dependencies and build the FPGA candidate:
+The public verification path fetches only dependencies whose source terms are
+cleared for this repository:
 
 ~~~powershell
 .\fetch_dependencies.ps1
+.\test.ps1
 .\build.ps1
 ~~~
 
 The design targets xc7z010clg400-1, uses a 100 MHz PS FCLK, and does not use
-the adapter's standalone N18 clock. To create standalone firmware and a
-ready-to-copy SD directory from the routed XSA:
+the adapter's standalone N18 clock. Vivado/Vitis, XSCT, and Bootgen 2024.2 are
+external AMD/Xilinx tools and are not redistributed here.
+
+The current MDX target requires the optional portable_mdx/MXDRV/X68Sound
+prototype dependency. To create standalone firmware and a ready-to-copy SD
+directory for private evaluation, explicitly acknowledge that boundary:
 
 ~~~powershell
-.\packaging\build_firmware.ps1
+.\fetch_dependencies.ps1 -IncludePrototypeMdx
+.\build.ps1
+.\packaging\build_firmware.ps1 -IncludePrototypeMdx
 ~~~
 
-Build output is intentionally not committed to this public snapshot.
+The final command generates `build/vitis/sd/BOOT.BIN` plus the SD directory.
+That binary is private and non-redistributable until the portable_mdx terms are
+resolved. Build output and proprietary Xilinx tools are intentionally not
+committed to this public snapshot.
 
 ## SD card workflow
 

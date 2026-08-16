@@ -3,8 +3,15 @@
 Run from the repository root:
 
 ```powershell
-.\samples\retrofm_player\packaging\build_firmware.ps1
+.\fetch_dependencies.ps1 -IncludePrototypeMdx
+.\build.ps1
+.\packaging\build_firmware.ps1 -IncludePrototypeMdx
 ```
+
+This is the explicitly private prototype path. It requires Vivado/Vitis,
+XSCT, and Bootgen 2024.2 installed locally. The generated target contains the
+optional portable_mdx/MXDRV/X68Sound dependency and must not be redistributed
+until its terms are resolved.
 
 The script verifies every pinned dependency, creates a fresh Vitis standalone
 platform from the routed XSA, enables FatFs long filenames, discovers the AXI
@@ -12,7 +19,7 @@ base and interrupt from generated `xparameters.h`, compiles the application
 with Vitis ARM GCC, obtains the platform FSBL, invokes Bootgen, and verifies the
 rights-cleared test files.
 
-Successful output is under `../build/vitis`:
+Successful output is under `build/vitis`:
 
 - `artifacts/build-manifest.json`: compiler, XSA, address/IRQ, DDR, and hashes;
 - `artifacts/retrofm_app.elf` and `retrofm_fsbl.elf`;
