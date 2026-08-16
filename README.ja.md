@@ -203,10 +203,11 @@ presentation evidence であり、未完了の bench acceptance gate の代わ�
 
 ## 関連プロジェクト
 
-[RetroFM Pocket](https://github.com/Keitark/RetroFM-Pocket) は、M5Stack
-M5StickS3 向けの姉妹ソフトウェア実装です。ESP32-S3 上で YM2203/OPN の
-VGM/VGZ、YM2151/OPM の MDX、任意の PDX/ADPCM を再生し、曲名、スペクトラム、
-チャンネル活動量の UI を表示します。
+[RetroFM Pocket](https://www.hackster.io/keitaroukondou/retrofm-pocket-80060a)
+は、M5Stack M5StickS3 向けの姉妹ソフトウェア実装です。ESP32-S3 上で
+YM2203/OPN の VGM/VGZ、YM2151/OPM の MDX、任意の PDX/ADPCM を再生し、
+曲名、スペクトラム、チャンネル活動量の UI を表示します。
+[ソースコードは GitHub で公開しています](https://github.com/Keitark/RetroFM-Pocket)。
 
 本 EBAZ4205 版は別実装であり、FM 合成を JT51、JT03、および実験段階の
 JT2608 経路による FPGA ハードウェアへ移しています。RetroFM Pocket は

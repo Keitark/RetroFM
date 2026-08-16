@@ -203,10 +203,11 @@ Future artifacts should be added only after their evidence is recorded:
 
 ## Related project
 
-[RetroFM Pocket](https://github.com/Keitark/RetroFM-Pocket) is the companion
-software implementation for the M5Stack M5StickS3. It provides an ESP32-S3
-reference for YM2203/OPN VGM/VGZ playback, YM2151/OPM MDX playback, optional
-PDX/ADPCM, and the title, spectrum, and channel-activity UI.
+[RetroFM Pocket](https://www.hackster.io/keitaroukondou/retrofm-pocket-80060a)
+is the companion software implementation for the M5Stack M5StickS3. It provides
+an ESP32-S3 reference for YM2203/OPN VGM/VGZ playback, YM2151/OPM MDX playback,
+optional PDX/ADPCM, and the title, spectrum, and channel-activity UI. Its
+[source code is available on GitHub](https://github.com/Keitark/RetroFM-Pocket).
 
 This EBAZ4205 project is a separate implementation that moves FM synthesis into
 FPGA hardware using JT51, JT03, and the experimental JT2608 path. RetroFM Pocket
