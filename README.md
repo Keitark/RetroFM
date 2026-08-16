@@ -201,6 +201,19 @@ Future artifacts should be added only after their evidence is recorded:
 - FAT32 card layout photograph.
 - Architecture rendering based on the diagram above.
 
+## Related project
+
+[RetroFM Pocket](https://github.com/Keitark/RetroFM-Pocket) is the companion
+software implementation for the M5Stack M5StickS3. It provides an ESP32-S3
+reference for YM2203/OPN VGM/VGZ playback, YM2151/OPM MDX playback, optional
+PDX/ADPCM, and the title, spectrum, and channel-activity UI.
+
+This EBAZ4205 project is a separate implementation that moves FM synthesis into
+FPGA hardware using JT51, JT03, and the experimental JT2608 path. RetroFM Pocket
+is not bundled as a dependency. Its source is MIT-licensed; see its
+[LICENSE](https://github.com/Keitark/RetroFM-Pocket/blob/main/LICENSE) and
+dependency notices.
+
 ## Acknowledgements and licensing
 
 The combined RetroFM source is GPL-3.0-only; see [LICENSE](LICENSE), [COPYING](COPYING), and

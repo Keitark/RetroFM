@@ -201,6 +201,19 @@ presentation evidence であり、未完了の bench acceptance gate の代わ�
 - FAT32 card layout の写真。
 - 上の diagram に基づく architecture rendering。
 
+## 関連プロジェクト
+
+[RetroFM Pocket](https://github.com/Keitark/RetroFM-Pocket) は、M5Stack
+M5StickS3 向けの姉妹ソフトウェア実装です。ESP32-S3 上で YM2203/OPN の
+VGM/VGZ、YM2151/OPM の MDX、任意の PDX/ADPCM を再生し、曲名、スペクトラム、
+チャンネル活動量の UI を表示します。
+
+本 EBAZ4205 版は別実装であり、FM 合成を JT51、JT03、および実験段階の
+JT2608 経路による FPGA ハードウェアへ移しています。RetroFM Pocket は
+依存関係として同梱していません。RetroFM Pocket のソースは MIT license です。
+詳細は [LICENSE](https://github.com/Keitark/RetroFM-Pocket/blob/main/LICENSE)
+と依存関係の notice を参照してください。
+
 ## 謝辞とライセンス
 
 RetroFM の結合ソースは GPL-3.0-only です。[LICENSE](LICENSE)、[COPYING](COPYING)、
