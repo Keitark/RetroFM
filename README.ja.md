@@ -9,6 +9,11 @@
 
 [English](README.md) | 日本語
 
+![EBAZ4205 実機で動作する RetroFM とリアルタイム spectrum analyzer](docs/media/retrofm-spectrum-cover.jpg)
+
+*EBAZ4205 実機での再生画面です。ST7789 にリアルタイム spectrum と channel
+activity を表示しています。[画像の由来](docs/media/README.md)。*
+
 RetroFM は EBAZ4205（Zynq-7000）向けの、ソースを中心とした FM プレーヤー
 です。ARM の Processing System はストレージ、ファイル解析、シーケンス、
 メタデータ、ST7789 表示を担当します。FPGA fabric は時刻付き Yamaha レジスタ
@@ -182,12 +187,15 @@ CTest 9/9、公開版 target-support CTest 3/3、候補 RTL/build check、routed
   pathological loop は明示的に拒否します。
 - 公開スナップショットには prebuilt binary や music release はありません。
 
-## Media slot
+## Media
 
-ソーススナップショットにはレビュー済みの media asset がありません。対応する
-証跡を記録した後だけ、次の artifact を追加してください。
+repository には、ST7789 の spectrum と channel display を表示した実機 cover frame
+を 1 枚収録しています。source hash と deterministic crop は
+[media provenance note](docs/media/README.md) に記録しています。この画像は
+presentation evidence であり、未完了の bench acceptance gate の代わりにはなりません。
 
-- ST7789 UI の写真。
+今後の artifact は、対応する証跡を記録した後だけ追加してください。
+
 - EBAZ4205 と H4 adapter の写真。
 - filter 後の left/right を high-impedance で測定した scope capture。
 - FAT32 card layout の写真。

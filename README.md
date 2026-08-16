@@ -9,6 +9,11 @@
 
 English | [日本語](README.ja.md)
 
+![RetroFM running on the EBAZ4205 prototype with the live spectrum analyzer](docs/media/retrofm-spectrum-cover.jpg)
+
+*Real EBAZ4205 prototype playback; the ST7789 shows the live spectrum and
+channel activity. [Image provenance](docs/media/README.md).*
+
 RetroFM is a source-first FM player for the EBAZ4205 Zynq-7000 board. The ARM
 processing system handles storage, file parsing, sequencing, metadata, and the
 ST7789 display. The FPGA fabric schedules timestamped Yamaha register writes,
@@ -182,12 +187,15 @@ Known limitations:
   zero-time/pathological loops are rejected explicitly.
 - The public snapshot contains no prebuilt binary or music release.
 
-## Media slots
+## Media
 
-The source snapshot has no reviewed media assets. Add artifacts only after the
-corresponding evidence is recorded:
+The repository includes one reviewed real-hardware cover frame showing the
+ST7789 spectrum and channel display. Its source hash and deterministic crop are
+recorded in [the media provenance note](docs/media/README.md). It is
+presentation evidence, not a substitute for the open bench acceptance gates.
 
-- ST7789 UI photograph.
+Future artifacts should be added only after their evidence is recorded:
+
 - EBAZ4205 plus H4 adapter photograph.
 - High-impedance scope capture of filtered left/right output.
 - FAT32 card layout photograph.
